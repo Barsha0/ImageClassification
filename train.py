@@ -52,3 +52,9 @@ model = tf.keras.Sequential([
 ])
 
 #Compile Model
+
+model.compile(
+    optimizer = 'adam',
+    loss = 'binary-crossentrophy',
+    metrics = ['accuracy']
+)
