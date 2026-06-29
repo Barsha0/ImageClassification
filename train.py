@@ -1,6 +1,8 @@
 import tensorflow as tf 
 from clean_data import clean_dataset
 from reduce_overfitting import get_data_augmentation
+from evaluate import evaluate_model
+from predict import predict_image
 
 # Clean the dataset first
 clean_dataset()
@@ -81,3 +83,12 @@ history = model.fit(
     validation_data = val_data,
     epochs = 10,
 )
+
+# Evaluate
+
+evaluate_model(model, val_data)
+
+# Prediction
+
+predict_image(model, "PetImages/Cat/1.jpg")
+predict_image(model, "PetImages/Dog/1.jpg")
